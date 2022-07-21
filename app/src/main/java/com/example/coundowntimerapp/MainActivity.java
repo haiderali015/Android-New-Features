@@ -10,6 +10,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import java.net.URL;
+
 public class MainActivity extends AppCompatActivity {
 
     public class BG extends AsyncTask<String,Void,String> {
@@ -27,7 +29,11 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected String doInBackground(String... strings) {
-            return null;
+            Log.d("HaiderBackground","doinBackground:run");
+            String result = "";
+            URL url;
+            
+
         }
     }
         @Override
