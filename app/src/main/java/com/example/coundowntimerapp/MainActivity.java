@@ -28,10 +28,11 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
             Log.d("HaiderBackground","onPreExecute:run");
+            Log.d("HaiderBackground",s);
         }
 
         @Override
-        protected String doInBackground(String... strings) {
+        protected String doInBackground(String... urls) {
             Log.d("HaiderBackground","doinBackground:run");
             String result = "";
             URL url;
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 url=new URL(urls[0]);
                 conn = (HttpURLConnection) url.openConnection();
                 InputStream in = conn.getInputStream();
-                InputStreamReader reader = new InputStreamReader();
+                InputStreamReader reader = new InputStreamReader(in);
                 int data = reader.read();
                 while (data!=-1)
                 {
@@ -64,6 +65,9 @@ public class MainActivity extends AppCompatActivity {
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
+            BG myTask = new BG();
+            myTask.execute("https://www.youtube.com/c/HaiderVocals/videos");
+
 
         }
 
