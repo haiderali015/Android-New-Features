@@ -12,15 +12,17 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    public class BG extends AsyncTask<String,void,String> {
+    public class BG extends AsyncTask<String,Void,String> {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
+            Log.d("HaiderBackground","onPreExecute:run");
         }
 
         @Override
         protected void onPostExecute(String s) {
-
+            super.onPostExecute(s);
+            Log.d("HaiderBackground","onPreExecute:run");
         }
 
         @Override
